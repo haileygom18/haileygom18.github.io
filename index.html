@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Haybay Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="top-section">
+      <h1 class="page-title">Home Page</h1>
+      <div class="intro-section">
+       <p class="page-description">
+        Welcome to my photograpy page! <br> Completely deisgned by me,
+         my goal was to share my gallery of moments I've captured of 
+         different people, places and memories. Photography is one of the best ways to 
+         hold a moment and time, I can't wait to show you all I have captured!
+        </p>
+        <img class="intro-image" src="images/camera.jpg" alt="photography">
+      </div>     
+      </header>
+    <button class= "menu-button">Menu</button>
+    <nav class="navbar sidebar">
+      <button class="close-button">x</button>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="carousel-row">
+        <div class="carousel1">
+          <img class="carousel-image" src="images/desert.jpg" alt="gallery photo">
+        </div>
+
+        <div class="carousel2">
+          <img class="carousel-image" src="images/c2-1.JPG" alt="gallery photo">
+        </div>
+
+        <div class="carousel3">
+          <img class="carousel-image" src="images/camera.jpg" alt="gallery photo">
+        </div>
+      </div>
+    </main>
+    <script>
+      const menuButton = document.querySelector(".menu-button");
+      const sidebar = document.querySelector(".sidebar");
+      const closeButton = document.querySelector(".close-button");
+      const carousel1Image = document.querySelector(".carousel1 .carousel-image");
+      const carousel2Image = document.querySelector(".carousel2 .carousel-image");
+      const carousel3Image = document.querySelector(".carousel3 .carousel-image");
+
+      const C1photos = ["images/desert.jpg", "images/homepage.png","images/spin.png", "images/IA.png"];
+      const C2photos = ["images/c2-1.jpg", "images/c2-2.jpg", "images/c2-3.jpg", "images/c2-4.jpg"];
+      const C3photos = ["images/camera.jpg"];
+      let C1currentPhoto= 0;
+      let C2currentPhoto= 0;
+      let C3currentPhoto= 0;
+
+      menuButton.addEventListener("click",function() {
+        sidebar.classList.toggle("open");
+      });
+      closeButton.addEventListener("click", function(){
+        sidebar.classList.remove("open");
+      });
+
+      setInterval(function() {
+        C1currentPhoto = C1currentPhoto + 1;
+
+        if (C1currentPhoto === C1photos.length) {
+          C1currentPhoto = 0;
+        }
+        
+        carousel1Image.src = C1photos[C1currentPhoto];
+      }, 3000);
+
+      setInterval(function() {
+        C2currentPhoto = C2currentPhoto + 1;
+
+        if (C2currentPhoto === C2photos.length) {
+          C2currentPhoto = 0;
+        }
+        
+        carousel2Image.src = C2photos[C2currentPhoto];
+      }, 3000);
+
+      setInterval(function() {
+        C3currentPhoto = C3currentPhoto + 1;
+
+        if (C3currentPhoto === C3photos.length) {
+          C3currentPhoto = 0;
+        }
+        
+        carousel3Image.src = C3photos[C3currentPhoto];
+      }, 3000);
+ 
+    </script>
+  </body>
