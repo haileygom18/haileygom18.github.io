@@ -1,11 +1,12 @@
 body {
     margin: 0;
-    background-color: rgb(255, 237, 239);
+    background-color: rgb(213, 223, 254);
 }
 
 .about-image img{
     width: 300px;
-    height:auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .sidebar {
@@ -43,25 +44,37 @@ body {
     
 }
 .page-description {
-    font-size: 20px;
+    font-size: 40px;
     font-family:'Dancing Script', curisve;
-    font-weight: medium;
+    font-weight: bold;
     text-align: left;
     max-width: 450px;
     line-height:1.6;
+    margin-right: 450px;
+    margin-top: 300px;
+    color: rgb(225,225,225);
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .page-title {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
+    background-color: rgb(213, 223, 254);
+    padding: 15px;
+    opacity: 0.75;
+    color: white;
+
 
 }
 
 .top-section {
-    background-color: rgb(253, 239, 239);
-    padding: 30px;
-    height: 450px;
+    background-image: url("images/backg.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 20% 55%;
     border: 2px black dashed;
+    border-radius: 10px;
+    min-height: 500px;
 }
 
 .intro-section {
@@ -69,14 +82,18 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 .intro-image {
-    width: 200px;
-    height: auto;
+    height:300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 0;
+    border-radius: 15px;
+
+    
 }
 
 .carousel-image {
@@ -94,6 +111,9 @@ body {
     margin: 40px auto;
     padding: 20px;
 }
+
+
+
 
 
 
