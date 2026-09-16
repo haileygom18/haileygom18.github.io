@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Haybay Gallery</title>
+      <title>Haybay Gallery</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="top-section">
-        <h1 class="page-title">HayBay Gallery🤍</h1>
+        <h1 class="page-title" onclick="window.location.href='index.html'">HayBay Gallery🤍</h1>
       <div class="intro-section">
       <div class="p-back">
        <p class="page-description">
-        Places, People, Memories.
-        </p>
-        </div>
-      </div>     
+        Places, People, Memories.</p>
+      </div>
+      </div>    
       </header>
-    <button class= "menu-button">Menu</button>
-    <nav class="navbar sidebar">
-      <button class="close-button">x</button>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <button class= "contact-button" onclick="window.location.href='contact.html'">Contact</button>
+    <button class="experiance-button" onclick="window.location.href='resume.html'">Experiance</button>
+    <button class="porfolio-button" onclick="window.location.href='portfolio.html'">Portfolio</button>
     <main>
       <div class="carousel-row">
+        <button class="arrow-left" type="button">←</button>
         <div class="carousel1">
           <img class="carousel-image" src="images/desert.jpg" alt="gallery photo">
         </div>
@@ -39,6 +31,7 @@
         <div class="carousel3">
           <img class="carousel-image" src="images/c3-1.jpg" alt="gallery photo">
         </div>
+        <button class="arrow-right" type="button">→</button> 
       </div>
       <div>
         <video class="video" autoplay loop muted playsinline>
@@ -47,9 +40,15 @@
       </div>
     </main>
     <script>
-      const menuButton = document.querySelector(".menu-button");
-      const sidebar = document.querySelector(".sidebar");
-      const closeButton = document.querySelector(".close-button");
+
+      function showPhoto(image,photoList,current) {
+        image.style.opacity = 0;
+
+        setTimeout(function() {
+          image.src = photoList[current];
+          image.style.opacity = 1;
+        }, 250);
+      }
       const carousel1Image = document.querySelector(".carousel1 .carousel-image");
       const carousel2Image = document.querySelector(".carousel2 .carousel-image");
       const carousel3Image = document.querySelector(".carousel3 .carousel-image");
@@ -61,11 +60,22 @@
       let C2currentPhoto= 0;
       let C3currentPhoto= 0;
 
-      menuButton.addEventListener("click",function() {
-        sidebar.classList.toggle("open");
+      function changeGallery(direction) {
+        C1currentPhoto = (C1currentPhoto + direction + C1photos.length) % C1photos.length;
+        C2currentPhoto = (C2currentPhoto + direction + C2photos.length) % C2photos.length;
+        C3currentPhoto = (C3currentPhoto + direction + C3photos.length) % C3photos.length;
+      
+        carousel1Image.src = showPhoto(carousel1Image,C1photos,C1currentPhoto);
+        carousel2Image.src = showPhoto(carousel2Image,C2photos,C2currentPhoto);
+        carousel3Image.src = showPhoto(carousel3Image,C3photos,C3currentPhoto);
+      }
+
+      document.querySelector(".arrow-left").addEventListener("click", function() {
+        changeGallery(-1);
       });
-      closeButton.addEventListener("click", function(){
-        sidebar.classList.remove("open");
+
+      document.querySelector(".arrow-right").addEventListener("click",function(){
+        changeGallery(1);
       });
 
       setInterval(function() {
@@ -79,7 +89,7 @@
       }, 3000);
 
       setInterval(function() {
-        C2currentPhoto = C2currentPhoto + 1;
+           C2currentPhoto = C2currentPhoto + 1;
 
         if (C2currentPhoto === C2photos.length) {
           C2currentPhoto = 0;
@@ -89,7 +99,7 @@
       }, 3000);
 
       setInterval(function() {
-        C3currentPhoto = C3currentPhoto + 1;
+         C3currentPhoto = C3currentPhoto + 1;
 
         if (C3currentPhoto === C3photos.length) {
           C3currentPhoto = 0;

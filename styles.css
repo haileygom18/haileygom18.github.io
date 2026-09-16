@@ -1,3 +1,4 @@
+/*main*/
 body {
     margin: 0;
     background-color: rgb(213, 223, 254);
@@ -6,10 +7,39 @@ body {
     height: 100%
 }
 
+/*image/media*/
 .about-image img{
     width: 300px;
     display: block;
     margin: 0 auto;
+}
+
+.intro-image {
+    height:300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 0;
+    border-radius: 15px;
+
+    
+}
+
+.carousel-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display:inline;
+  border: 3px white dashed;
+  opacity: 1;
+  transition: none;
+}
+
+.video {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    opacity: 90%;
 }
 
 .sidebar {
@@ -26,6 +56,7 @@ body {
     left:0;
 }
 
+/*buttons*/
 .close-button {
     background: none;
     border:none;
@@ -33,19 +64,68 @@ body {
     cursor:pointer;
 }
 
-.menu-button {
-    background: rgb(247, 220, 224);
-    border: solid 1px black;
-    border-radius:0 0 0 14px;
-    padding:16px 40px;
+.contact-button {
+    cursor: pointer;
+    background: transparent;
+    padding: 14px 16px;
+    border:transparent;
     font-size:large;
     position:fixed;
-    top:0px;
-    right:0px;
-    
-   
-    
+    top:15px;
+    right: 300px;
+    color: white;
+    text-shadow: 6px,6px,8px black;
+    font-weight: 450px;
+    position:absolute;
+
 }
+
+.experiance-button {
+    cursor: pointer;
+    background: transparent;
+    padding: 14px 16px;
+    border:transparent;
+    font-size:large;
+    position:fixed;
+    top:15px;
+    right: 180px;
+    color:white;
+    text-shadow: 6px, 6px, 8px black; 
+    font-weight: 450;
+    position: absolute;  
+}
+
+.porfolio-button {
+    cursor: pointer;
+    background: transparent;
+    padding: 14px 16px;
+    border:transparent;
+    font-size:large;
+    position:fixed;
+    top:15px;
+    right: 80px;
+    color: white;
+    text-shadow: 6px, 6px, 8px black;
+    font-weight: 450;
+    position: absolute;   
+}
+
+.arrow-left, .arrow-right {
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index:5;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right:10px;
+}
+
+/*text*/
 .page-description {
     font-size: 40px;
     font-family:'Dancing Script', curisve;
@@ -61,6 +141,7 @@ body {
     position: absolute;
 }
 
+/*titles*/
 .page-title {
     margin-top: 0px;
     text-shadow: 7px 7px 8px rgba(0, 0, 0, 0.2);
@@ -68,10 +149,10 @@ body {
     padding: 15px;
     opacity: 0.90;
     color: white;
-
-
+    cursor: pointer;
 }
 
+/*sections*/
 .top-section {
     background-image: url("images/backg.jpg");
     background-size:cover;
@@ -91,40 +172,19 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-.intro-image {
-    height:300px;
-    width: 300px;
-    object-fit: cover;
-    border-radius: 0;
-    border-radius: 15px;
-
-    
-}
-
-.carousel-image {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  display:inline;
-  border: 3px white dashed;
-}
 
 .carousel-row {
+    position: relative;
     display:grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,minmax(200px,1fr));
     gap: 20px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
+    width:1100px;
+    height: auto;
+    overflow-x: auto;
+    padding: 60px;
 }
 
-.video {
-    display: block;
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    opacity: 90%;
-}
+
 
 
 
