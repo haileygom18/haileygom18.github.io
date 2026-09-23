@@ -65,9 +65,9 @@
         C2currentPhoto = (C2currentPhoto + direction + C2photos.length) % C2photos.length;
         C3currentPhoto = (C3currentPhoto + direction + C3photos.length) % C3photos.length;
       
-        carousel1Image.src = showPhoto(carousel1Image,C1photos,C1currentPhoto);
-        carousel2Image.src = showPhoto(carousel2Image,C2photos,C2currentPhoto);
-        carousel3Image.src = showPhoto(carousel3Image,C3photos,C3currentPhoto);
+        showPhoto(carousel1Image, C1photos, C1currentPhoto);
+        showPhoto(carousel2Image, C2photos, C2currentPhoto);
+        showPhoto(carousel3Image, C3photos, C3currentPhoto);
       }
 
       document.querySelector(".arrow-left").addEventListener("click", function() {
